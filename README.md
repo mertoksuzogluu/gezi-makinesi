@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gezi Makinesi - Turlar & Vize Danışmanlığı
 
-## Getting Started
+Modern, responsive ve kullanıcı dostu bir tur ve vize danışmanlığı web sitesi. Next.js 14, TypeScript ve TailwindCSS ile geliştirilmiştir.
 
-First, run the development server:
+## 🚀 Özellikler
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Turlar (Gezi Makinesi)
+- Hazır tur listesi ve detay sayfaları
+- "Kendi Turunu Oluştur" özelliği ile grup tur talep formu
+- Popüler turlar ve filtreleme
+
+### Vize Danışmanlığı (Vize Makinesi)
+- Tüm Schengen ülkeleri + Dubai + ABD + İngiltere için vize bilgileri
+- Her ülke için detaylı evrak listesi
+- Vize talep formu
+- Süreç takibi
+
+### Kullanıcı Paneli
+- Mock auth sistemi (email + password)
+- Talep listesi ve detay görüntüleme
+- Durum takibi (timeline)
+
+## 📁 Proje Yapısı
+
+```
+src/
+├── app/                    # Next.js App Router sayfaları
+│   ├── turlar/            # Tur sayfaları
+│   ├── vize/              # Vize sayfaları
+│   ├── panel/             # Kullanıcı paneli
+│   ├── giris/             # Giriş sayfası
+│   ├── kayit/             # Kayıt sayfası
+│   └── ...                # Diğer statik sayfalar
+├── components/            # React componentleri
+│   ├── ui/               # shadcn/ui componentleri
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   └── ...
+├── contexts/              # React Context'ler
+│   └── AuthContext.tsx
+├── data/                  # Mock data
+│   ├── tours.ts
+│   ├── visa-countries.ts
+│   └── requests.ts
+├── hooks/                 # Custom hooks
+├── lib/                   # Utility fonksiyonları
+│   ├── utils.ts
+│   └── validations.ts
+└── types/                 # TypeScript type'ları
+    └── index.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Teknolojiler
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** TailwindCSS
+- **UI Components:** shadcn/ui
+- **Forms:** react-hook-form + zod
+- **Icons:** Lucide React
+- **Date:** date-fns
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Kurulum
 
-## Learn More
+### Gereksinimler
+- Node.js 18+
+- npm veya yarn
 
-To learn more about Next.js, take a look at the following resources:
+### Adımlar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Projeyi klonlayın veya indirin
+```bash
+cd gezi-makinesi
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Bağımlılıkları yükleyin
+```bash
+npm install
+```
 
-## Deploy on Vercel
+3. Geliştirme sunucusunu başlatın
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Tarayıcıda açın
+```
+http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Logo Değiştirme
+
+Logo dosyalarını `public/` klasöründe bulabilirsiniz:
+- `logo.svg` - Header için (koyu tema)
+- `logo-white.svg` - Footer için (açık tema)
+
+Kendi logonuzu eklemek için bu dosyaları değiştirin. SVG formatı önerilir.
+
+## 📝 İçerik Güncelleme
+
+### Tur Verilerini Güncelleme
+`src/data/tours.ts` dosyasını düzenleyin:
+
+```typescript
+export const tours: Tour[] = [
+  {
+    id: '1',
+    slug: 'paris-turu',
+    title: 'Paris Romantik Kaçamak',
+    // ... diğer alanlar
+  },
+];
+```
+
+### Vize Ülkelerini Güncelleme
+`src/data/visa-countries.ts` dosyasını düzenleyin:
+
+```typescript
+const schengenCountries: VisaCountry[] = [
+  {
+    code: 'DE',
+    slug: 'almanya',
+    name: 'Almanya',
+    // ... diğer alanlar
+  },
+];
+```
+
+## 🔐 Auth Sistemi
+
+Şu an mock auth kullanılmaktadır. Veriler localStorage'da saklanır.
+
+### Demo Hesabı
+- E-posta: `demo@example.com`
+- Şifre: `123456`
+
+### Gerçek Auth'a Geçiş
+`src/contexts/AuthContext.tsx` dosyasındaki `login`, `register` ve `logout` fonksiyonlarını gerçek API çağrılarıyla değiştirin.
+
+## 📱 Responsive Tasarım
+
+Site tüm ekran boyutlarına uyumludur:
+- Mobil (< 640px)
+- Tablet (640px - 1024px)
+- Desktop (> 1024px)
+
+## 🌐 SEO
+
+Her sayfa için dinamik metadata tanımlanmıştır:
+- Title ve description
+- Open Graph tags
+- Türkçe dil ayarı
+
+## 📦 Build
+
+Production build için:
+
+```bash
+npm run build
+npm start
+```
+
+## 🔧 Ortam Değişkenleri
+
+Şu an ortam değişkeni gerekmemektedir. Gerçek API entegrasyonu için `.env.local` dosyası oluşturun:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.example.com
+```
+
+## 📄 Lisans
+
+Bu proje özel kullanım içindir.
+
+---
+
+Gezi Makinesi © 2026
