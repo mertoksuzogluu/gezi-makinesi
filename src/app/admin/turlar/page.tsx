@@ -17,8 +17,14 @@ import {
   Trash2, 
   MapPin, 
   Calendar,
+  CalendarDays,
   Eye
 } from 'lucide-react';
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' });
+}
 import {
   AlertDialog,
   AlertDialogAction,
@@ -87,7 +93,7 @@ function TourListContent() {
                         <Badge className="bg-amber-500">Popüler</Badge>
                       )}
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-4 w-4" />
                         {tour.location}, {tour.country}
@@ -96,6 +102,12 @@ function TourListContent() {
                         <Calendar className="h-4 w-4" />
                         {tour.durationDays} Gün
                       </span>
+                      {tour.startDate && tour.endDate && (
+                        <span className="flex items-center gap-1 text-green-600">
+                          <CalendarDays className="h-4 w-4" />
+                          {formatDate(tour.startDate)} - {formatDate(tour.endDate)}
+                        </span>
+                      )}
                       <span className="font-medium text-primary">€{tour.priceFrom}</span>
                     </div>
                   </div>

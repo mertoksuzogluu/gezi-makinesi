@@ -18,8 +18,14 @@ import {
   ArrowRight,
   Clock,
   Users,
-  Loader2
+  Loader2,
+  CalendarDays
 } from 'lucide-react';
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 
 export default function TourDetailPage() {
   const params = useParams();
@@ -71,6 +77,12 @@ export default function TourDetailPage() {
                 <Calendar className="h-4 w-4 mr-1" />
                 {tour.durationDays} Gün
               </Badge>
+              {tour.startDate && tour.endDate && (
+                <Badge variant="secondary" className="text-sm bg-green-600 text-white">
+                  <CalendarDays className="h-4 w-4 mr-1" />
+                  {formatDate(tour.startDate)} - {formatDate(tour.endDate)}
+                </Badge>
+              )}
               {tour.isPopular && (
                 <Badge className="bg-amber-500">Popüler</Badge>
               )}
@@ -176,6 +188,14 @@ export default function TourDetailPage() {
                       <Calendar className="h-4 w-4 text-muted-foreground" />
                       <span>{tour.durationDays} Gün / {tour.durationDays - 1} Gece</span>
                     </div>
+                    {tour.startDate && tour.endDate && (
+                      <div className="flex items-center gap-2">
+                        <CalendarDays className="h-4 w-4 text-green-600" />
+                        <span className="text-green-600 font-medium">
+                          {formatDate(tour.startDate)} - {formatDate(tour.endDate)}
+                        </span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-muted-foreground" />
                       <span>{tour.location}, {tour.country}</span>

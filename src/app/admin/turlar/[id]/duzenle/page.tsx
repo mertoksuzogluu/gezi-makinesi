@@ -29,6 +29,8 @@ function EditTourContent() {
     title: '',
     description: '',
     durationDays: 4,
+    startDate: '',
+    endDate: '',
     location: '',
     country: '',
     priceFrom: 1000,
@@ -49,6 +51,8 @@ function EditTourContent() {
           title: tour.title,
           description: tour.description,
           durationDays: tour.durationDays,
+          startDate: tour.startDate || '',
+          endDate: tour.endDate || '',
           location: tour.location,
           country: tour.country,
           priceFrom: tour.priceFrom,
@@ -117,6 +121,8 @@ function EditTourContent() {
         title: formData.title,
         description: formData.description,
         durationDays: formData.durationDays,
+        startDate: formData.startDate || undefined,
+        endDate: formData.endDate || undefined,
         location: formData.location,
         country: formData.country,
         priceFrom: formData.priceFrom,
@@ -247,6 +253,27 @@ function EditTourContent() {
                     onChange={(e) => setFormData(prev => ({ ...prev, priceFrom: parseInt(e.target.value) }))}
                     required
                   />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label>Başlangıç Tarihi</Label>
+                  <Input
+                    type="date"
+                    value={formData.startDate}
+                    onChange={(e) => setFormData(prev => ({ ...prev, startDate: e.target.value }))}
+                  />
+                  <p className="text-xs text-muted-foreground">Turun başlangıç tarihi (opsiyonel)</p>
+                </div>
+                <div className="space-y-2">
+                  <Label>Bitiş Tarihi</Label>
+                  <Input
+                    type="date"
+                    value={formData.endDate}
+                    onChange={(e) => setFormData(prev => ({ ...prev, endDate: e.target.value }))}
+                  />
+                  <p className="text-xs text-muted-foreground">Turun bitiş tarihi (opsiyonel)</p>
                 </div>
               </div>
 

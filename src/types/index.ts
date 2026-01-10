@@ -5,6 +5,8 @@ export interface Tour {
   title: string;
   description: string;
   durationDays: number;
+  startDate?: string; // YYYY-MM-DD format
+  endDate?: string; // YYYY-MM-DD format
   location: string;
   country: string;
   priceFrom: number;
