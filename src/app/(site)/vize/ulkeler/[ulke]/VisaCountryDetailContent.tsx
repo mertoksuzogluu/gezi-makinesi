@@ -18,7 +18,6 @@ import { Steps } from '@/components/Steps';
 import { 
   Clock, 
   ArrowRight,
-  FileText,
   HelpCircle,
   CheckCircle2,
   Phone,
@@ -41,8 +40,8 @@ export function VisaCountryDetailContent() {
 
   const categoryColors: Record<string, string> = {
     Schengen: 'bg-blue-500',
-    USA: 'bg-blue-600',
-    UK: 'bg-blue-400',
+    USA: 'bg-blue-500',
+    UK: 'bg-blue-500',
     UAE: 'bg-sky-500',
   };
 
@@ -68,7 +67,7 @@ export function VisaCountryDetailContent() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-12">
+      <section className="bg-gradient-to-r from-sky-500 to-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-6xl">{country.flagEmoji}</span>
@@ -86,26 +85,12 @@ export function VisaCountryDetailContent() {
       {/* Quick Info */}
       <section className="py-8 border-b">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
             <Card>
               <CardContent className="p-6 text-center">
                 <Clock className="h-8 w-8 text-primary mx-auto mb-2" />
                 <h3 className="font-semibold mb-1">İşlem Süresi</h3>
                 <p className="text-2xl font-bold text-primary">{country.processingTime}</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-center">
-                <FileText className="h-8 w-8 text-primary mx-auto mb-2" />
-                <h3 className="font-semibold mb-1">Vize Ücreti</h3>
-                <p className="text-2xl font-bold text-primary">{country.visaFee}</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-center">
-                <CheckCircle2 className="h-8 w-8 text-primary mx-auto mb-2" />
-                <h3 className="font-semibold mb-1">Hizmet Bedeli</h3>
-                <p className="text-2xl font-bold text-primary">{country.serviceFee}</p>
               </CardContent>
             </Card>
           </div>

@@ -55,7 +55,9 @@ export default function TourDetailPage() {
   }
 
   return (
-    <div className="flex flex-col">
+    <>
+      <StructuredData type="tour" data={tour} />
+      <div className="flex flex-col">
       {/* Hero */}
       <section className="relative h-[400px] md:h-[500px]">
         {tour.heroImage.startsWith('/') ? (

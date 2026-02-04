@@ -34,7 +34,7 @@ export function VisaCountriesContent() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12">
+      <section className="bg-gradient-to-r from-sky-500 to-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Schengen Vize Ülkeleri & Vize Randevusu</h1>
           <p className="text-lg opacity-90 max-w-2xl">

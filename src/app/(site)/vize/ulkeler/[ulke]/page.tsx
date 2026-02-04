@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { getVisaCountryBySlug } from '@/lib/admin-data';
 import { VisaCountryDetailContent } from './VisaCountryDetailContent';
-import { StructuredData } from '@/components/StructuredData';
+import { VisaCountryStructuredData } from './VisaCountryStructuredData';
 
 export async function generateMetadata({ params }: { params: { ulke: string } }): Promise<Metadata> {
   const country = getVisaCountryBySlug(params.ulke);
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: { params: { ulke: string } })
 export default function VisaCountryPage({ params }: { params: { ulke: string } }) {
   return (
     <>
-      <StructuredData type="organization" />
+      <VisaCountryStructuredData />
       <VisaCountryDetailContent />
     </>
   );

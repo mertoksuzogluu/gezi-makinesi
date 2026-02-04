@@ -11,9 +11,16 @@ interface CountryCardProps {
 export function CountryCard({ country }: CountryCardProps) {
   const categoryColors: Record<string, string> = {
     Schengen: 'bg-blue-500',
-    USA: 'bg-blue-600',
-    UK: 'bg-blue-400',
-    UAE: 'bg-sky-500',
+    USA: 'bg-red-500',
+    UK: 'bg-purple-500',
+    UAE: 'bg-amber-500',
+  };
+
+  const categoryLabels: Record<string, string> = {
+    Schengen: 'Schengen',
+    USA: 'ABD',
+    UK: 'İngiltere',
+    UAE: 'Dubai (BAE)',
   };
 
   return (
@@ -23,7 +30,7 @@ export function CountryCard({ country }: CountryCardProps) {
           <div className="flex items-start justify-between mb-3">
             <span className="text-4xl">{country.flagEmoji}</span>
             <Badge className={categoryColors[country.category] || 'bg-gray-500'}>
-              {country.category}
+              {categoryLabels[country.category] || country.category}
             </Badge>
           </div>
           <h3 className="font-semibold text-lg mb-2">{country.name}</h3>
