@@ -21,6 +21,7 @@ import {
   Loader2,
   CalendarDays
 } from 'lucide-react';
+import { StructuredData } from '@/components/StructuredData';
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -60,13 +61,13 @@ export default function TourDetailPage() {
         {tour.heroImage.startsWith('/') ? (
           <img
             src={tour.heroImage}
-            alt={tour.title}
+            alt={`${tour.title} - ${tour.location}, ${tour.country} seyahat önerisi görseli`}
             className="w-full h-full object-cover"
           />
         ) : (
           <Image
             src={tour.heroImage}
-            alt={tour.title}
+            alt={`${tour.title} - ${tour.location}, ${tour.country} seyahat önerisi görseli`}
             fill
             className="object-cover"
             priority
@@ -269,5 +270,6 @@ export default function TourDetailPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

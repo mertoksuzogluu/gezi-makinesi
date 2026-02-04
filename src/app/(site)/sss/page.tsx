@@ -9,11 +9,26 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { StructuredData } from '@/components/StructuredData';
 import { ArrowRight, HelpCircle, Plane, Stamp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Sıkça Sorulan Sorular',
-  description: 'Vizelyio hakkında sıkça sorulan sorular ve cevapları.',
+  title: 'Schengen Vizesi SSS | Vize Nasıl Alınır Soruları',
+  description: 'Schengen vizesi, hızlı vize ve uzun süreli vize hakkında sıkça sorulan sorular. Almanya vizesi dahil vize nasıl alınır, vize süreci ve evraklar hakkında tüm sorularınızın cevapları.',
+  keywords: [
+    'schengen vizesi', 'hızlı vize', 'vize nasıl alınır', 'uzun süreli vize',
+    'Almanya vizesi', 'vize sıkça sorulan sorular', 'vize başvurusu', 'vize evrakları',
+    'vize süreci', 'vize randevusu', 'vize onay süresi', 'vize red', 'vize itiraz'
+  ],
+  openGraph: {
+    title: 'Schengen Vizesi SSS | Vize Nasıl Alınır Soruları',
+    description: 'Schengen vizesi, hızlı vize ve uzun süreli vize hakkında sıkça sorulan sorular. Almanya vizesi dahil vize nasıl alınır, vize süreci ve evraklar hakkında tüm sorularınızın cevapları.',
+    url: 'https://vizelyio.com/sss',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://vizelyio.com/sss',
+  },
 };
 
 const generalFaqs = [
@@ -82,8 +97,13 @@ const visaFaqs = [
 ];
 
 export default function FaqPage() {
+  // Tüm FAQ'leri birleştir
+  const allFaqs = [...generalFaqs, ...tourFaqs, ...visaFaqs];
+
   return (
-    <div className="flex flex-col">
+    <>
+      <StructuredData type="faq" data={{ faqs: allFaqs }} />
+      <div className="flex flex-col">
       {/* Hero */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16">
         <div className="container mx-auto px-4">
@@ -189,6 +209,7 @@ export default function FaqPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

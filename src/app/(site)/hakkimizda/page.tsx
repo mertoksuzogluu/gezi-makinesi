@@ -12,8 +12,22 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda',
-  description: 'Vizelyio hakkında bilgi edinin. 10+ yıllık deneyim, binlerce mutlu müşteri.',
+  title: 'Schengen Vizesi Uzmanı | Vize Danışmanlığı Hakkında',
+  description: '10+ yıllık deneyimle schengen vizesi ve hızlı vize danışmanlığı. Almanya vizesi dahil tüm Avrupa ülkeleri için vize nasıl alınır konusunda uzman ekibimizle hizmetinizdeyiz.',
+  keywords: [
+    'schengen vizesi', 'hızlı vize', 'vize danışmanlığı', 'Almanya vizesi',
+    'vize nasıl alınır', 'uzun süreli vize', 'uzun vize alma', 'vize uzmanı',
+    'vize danışmanlığı firması', 'güvenilir vize danışmanı', 'vize başvuru desteği'
+  ],
+  openGraph: {
+    title: 'Schengen Vizesi Uzmanı | Vize Danışmanlığı Hakkında',
+    description: '10+ yıllık deneyimle schengen vizesi ve hızlı vize danışmanlığı. Almanya vizesi dahil tüm Avrupa ülkeleri için vize nasıl alınır konusunda uzman ekibimizle hizmetinizdeyiz.',
+    url: 'https://vizelyio.com/hakkimizda',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://vizelyio.com/hakkimizda',
+  },
 };
 
 const stats = [

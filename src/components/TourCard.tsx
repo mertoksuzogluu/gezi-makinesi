@@ -24,13 +24,13 @@ export function TourCard({ tour }: TourCardProps) {
         {tour.heroImage.startsWith('/') ? (
           <img
             src={tour.heroImage}
-            alt={tour.title}
+            alt={`${tour.title} - ${tour.location}, ${tour.country} turu görseli`}
             className="w-full h-full object-cover transition-transform group-hover:scale-105"
           />
         ) : (
           <Image
             src={tour.heroImage}
-            alt={tour.title}
+            alt={`${tour.title} - ${tour.location}, ${tour.country} turu görseli`}
             fill
             className="object-cover transition-transform group-hover:scale-105"
             unoptimized
