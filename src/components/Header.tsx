@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
@@ -31,13 +30,10 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/logo.png"
+            <img
+              src="/logo.svg"
               alt="Vizelyio"
-              width={180}
-              height={40}
-              className="h-10 w-auto"
-              priority
+              className="h-12 w-auto md:h-14"
             />
           </Link>
 
@@ -47,7 +43,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-700 transition-colors hover:text-slate-900"
+                className="text-sm font-medium text-slate-700 transition-colors hover:text-primary"
               >
                 {item.title}
               </Link>
@@ -84,7 +80,7 @@ export function Header() {
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="flex items-center border-slate-300 text-slate-700 hover:bg-slate-50">
+                  <Button variant="outline" className="flex items-center border-slate-300 text-slate-700 hover:bg-slate-100">
                     <User className="mr-2 h-4 w-4" />
                     {user?.fullName.split(' ')[0]}
                     <ChevronDown className="ml-2 h-4 w-4" />
@@ -110,7 +106,7 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50" asChild>
+              <Button variant="outline" className="border-primary bg-primary text-white hover:bg-primary/90 hover:border-primary" asChild>
                 <Link href="/giris">Giriş Yap</Link>
               </Button>
             )}
@@ -119,7 +115,7 @@ export function Header() {
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-slate-700 hover:bg-slate-100">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -130,7 +126,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg font-medium py-2 border-b"
+                    className="text-lg font-medium py-2 border-b text-slate-800 hover:text-primary"
                   >
                     {item.title}
                   </Link>
@@ -159,14 +155,14 @@ export function Header() {
                   {isAuthenticated ? (
                     <div className="space-y-3">
                       <Link href="/panel" onClick={() => setMobileMenuOpen(false)}>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Button variant="ghost" className="w-full justify-start text-slate-800 hover:bg-slate-100">
                           <LayoutDashboard className="mr-2 h-4 w-4" />
                           Panel
                         </Button>
                       </Link>
                       <Button
                         variant="ghost"
-                        className="w-full justify-start text-red-600"
+                        className="w-full justify-start text-red-600 hover:bg-red-50"
                         onClick={() => {
                           logout();
                           setMobileMenuOpen(false);

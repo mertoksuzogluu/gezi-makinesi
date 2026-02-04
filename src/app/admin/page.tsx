@@ -59,7 +59,7 @@ function AdminDashboardContent() {
                   <p className="text-sm text-muted-foreground">Vize Ülkeleri</p>
                   <p className="text-3xl font-bold">{stats.visaCountries}</p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
                   <Stamp className="h-6 w-6 text-purple-600" />
                 </div>
               </div>
@@ -73,7 +73,7 @@ function AdminDashboardContent() {
                   <p className="text-sm text-muted-foreground">Toplam Talep</p>
                   <p className="text-3xl font-bold">{stats.requests}</p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
                   <FileText className="h-6 w-6 text-green-600" />
                 </div>
               </div>

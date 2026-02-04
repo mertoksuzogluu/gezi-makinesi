@@ -24,7 +24,7 @@ import {
 const statusConfig: Record<string, { color: string; icon: typeof Clock }> = {
   'Alındı': { color: 'bg-blue-500', icon: Clock },
   'İncelemede': { color: 'bg-yellow-500', icon: FileText },
-  'Eksik Evrak': { color: 'bg-orange-500', icon: AlertCircle },
+  'Eksik Evrak': { color: 'bg-yellow-500', icon: AlertCircle },
   'Tamamlandı': { color: 'bg-green-500', icon: CheckCircle2 },
 };
 
@@ -38,7 +38,7 @@ function RequestCard({ request }: { request: Request }) {
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                request.type === 'tour' ? 'bg-blue-100' : 'bg-purple-100'
+                request.type === 'tour' ? 'bg-blue-100' : 'bg-blue-50'
               }`}>
                 {request.type === 'tour' ? (
                   <Plane className="h-5 w-5 text-blue-600" />

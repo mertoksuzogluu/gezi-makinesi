@@ -23,7 +23,7 @@ import {
 const statusConfig: Record<string, { color: string; icon: typeof Clock }> = {
   'Alındı': { color: 'bg-blue-500', icon: Clock },
   'İncelemede': { color: 'bg-yellow-500', icon: FileText },
-  'Eksik Evrak': { color: 'bg-orange-500', icon: AlertCircle },
+  'Eksik Evrak': { color: 'bg-yellow-500', icon: AlertCircle },
   'Tamamlandı': { color: 'bg-green-500', icon: CheckCircle2 },
 };
 
@@ -101,7 +101,7 @@ export default function PanelPage() {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
                 <Stamp className="h-5 w-5 text-purple-600" />
               </div>
               <div>
@@ -168,7 +168,7 @@ export default function PanelPage() {
                   >
                     <div className="flex items-center gap-4">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                        request.type === 'tour' ? 'bg-blue-100' : 'bg-purple-100'
+                        request.type === 'tour' ? 'bg-blue-100' : 'bg-blue-50'
                       }`}>
                         {request.type === 'tour' ? (
                           <Plane className="h-5 w-5 text-blue-600" />
@@ -223,7 +223,7 @@ export default function PanelPage() {
         <Card>
           <CardContent className="p-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
                 <Stamp className="h-6 w-6 text-purple-600" />
               </div>
               <div className="flex-1">

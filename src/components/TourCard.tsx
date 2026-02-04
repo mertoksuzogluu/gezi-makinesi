@@ -21,17 +21,26 @@ export function TourCard({ tour }: TourCardProps) {
   return (
     <Card className="group overflow-hidden transition-all hover:shadow-lg">
       <div className="relative h-48 overflow-hidden">
-        <Image
-          src={tour.heroImage}
-          alt={tour.title}
-          fill
-          className="object-cover transition-transform group-hover:scale-105"
-        />
+        {tour.heroImage.startsWith('/') ? (
+          <img
+            src={tour.heroImage}
+            alt={tour.title}
+            className="w-full h-full object-cover transition-transform group-hover:scale-105"
+          />
+        ) : (
+          <Image
+            src={tour.heroImage}
+            alt={tour.title}
+            fill
+            className="object-cover transition-transform group-hover:scale-105"
+            unoptimized
+          />
+        )}
         {tour.isPopular && (
           <Badge className="absolute top-3 left-3 bg-primary">Popüler</Badge>
         )}
         {hasDateRange && (
-          <Badge className="absolute top-3 right-3 bg-green-600">
+          <Badge className="absolute top-3 right-3 bg-blue-500">
             {formatDate(tour.startDate!)}
           </Badge>
         )}

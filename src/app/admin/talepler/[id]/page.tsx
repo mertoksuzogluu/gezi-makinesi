@@ -62,13 +62,13 @@ const visaStatuses: RequestStatus[] = [
 const statusConfig: Record<string, { color: string; icon: typeof Clock }> = {
   'Alındı': { color: 'bg-blue-500', icon: Clock },
   'İncelemede': { color: 'bg-yellow-500', icon: FileText },
-  'Belgeler Bekleniyor': { color: 'bg-orange-500', icon: AlertCircle },
-  'Randevu Tarihi Belirlendi': { color: 'bg-purple-500', icon: Clock },
-  'Konsolosluk Sürecinde': { color: 'bg-indigo-500', icon: FileText },
-  'Teklif Hazırlandı': { color: 'bg-cyan-500', icon: FileText },
-  'Onay Bekleniyor': { color: 'bg-amber-500', icon: Clock },
-  'Pasaport Teslim Alındı': { color: 'bg-green-500', icon: CheckCircle2 },
-  'Tamamlandı': { color: 'bg-green-600', icon: CheckCircle2 },
+  'Belgeler Bekleniyor': { color: 'bg-yellow-500', icon: AlertCircle },
+  'Randevu Tarihi Belirlendi': { color: 'bg-blue-400', icon: Clock },
+  'Konsolosluk Sürecinde': { color: 'bg-blue-500', icon: FileText },
+  'Teklif Hazırlandı': { color: 'bg-blue-500', icon: FileText },
+  'Onay Bekleniyor': { color: 'bg-blue-500', icon: Clock },
+  'Pasaport Teslim Alındı': { color: 'bg-blue-600', icon: CheckCircle2 },
+  'Tamamlandı': { color: 'bg-blue-600', icon: CheckCircle2 },
   'İptal Edildi': { color: 'bg-red-500', icon: AlertCircle },
 };
 
@@ -182,7 +182,7 @@ function RequestDetailContent() {
           
           <div className="flex items-center gap-4">
             <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${
-              request.type === 'tour' ? 'bg-blue-100' : 'bg-purple-100'
+              request.type === 'tour' ? 'bg-blue-100' : 'bg-blue-50'
             }`}>
               {request.type === 'tour' ? (
                 <Plane className="h-7 w-7 text-blue-600" />

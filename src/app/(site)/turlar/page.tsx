@@ -22,13 +22,13 @@ export default function ToursPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-16">
+      <section className="bg-gradient-to-r from-sky-500 to-blue-500 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Turlarımız</h1>
             <p className="text-lg opacity-90">
               Avrupa&apos;nın en güzel şehirlerinden Dubai&apos;nin modern lüksüne, 
-              profesyonel rehberlik eşliğinde unutulmaz deneyimler sizi bekliyor.
+              tur danışmanlığı hizmetimizle unutulmaz deneyimler sizi bekliyor.
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function ToursPage() {
                       özel tur planı oluşturalım.
                     </p>
                     <div className="flex flex-wrap gap-3 mt-3">
-                      {['Esnek Tarih', 'İstediğiniz Otel', 'Özel Rehber'].map((item) => (
+                      {['Esnek Tarih', 'İstediğiniz Otel', 'Tur Danışmanlığı'].map((item) => (
                         <span key={item} className="flex items-center gap-1 text-sm text-muted-foreground">
                           <CheckCircle2 className="h-4 w-4 text-primary" />
                           {item}

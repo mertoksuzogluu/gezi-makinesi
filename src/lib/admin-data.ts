@@ -9,9 +9,25 @@ const VISA_COUNTRIES_KEY = 'gezi_visa_countries';
 function initializeData() {
   if (typeof window === 'undefined') return;
   
-  if (!localStorage.getItem(TOURS_KEY)) {
+  // Check if localStorage has old data with "rehberlik" or missing new tours
+  const existingTours = localStorage.getItem(TOURS_KEY);
+  if (existingTours) {
+    const tours = JSON.parse(existingTours);
+    const hasRehberlik = JSON.stringify(tours).toLowerCase().includes('rehberlik');
+    // Check if new tours are missing
+    const hasBansko = tours.some((t: Tour) => t.slug === 'bansko-kayak-turu');
+    const hasNewYork = tours.some((t: Tour) => t.slug === 'new-york-sehir-enerjisi');
+    const hasPrag = tours.some((t: Tour) => t.slug === 'prag-orta-avrupa-incisi');
+    const banskoTour = tours.find((t: Tour) => t.slug === 'bansko-kayak-turu');
+    const hasWrongImage = banskoTour && !banskoTour.heroImage.includes('/bansko-ski.jpg');
+    // Update if any new tours are missing or if there are issues
+    if (hasRehberlik || !hasBansko || !hasNewYork || !hasPrag || hasWrongImage || tours.length < defaultTours.length) {
+      localStorage.setItem(TOURS_KEY, JSON.stringify(defaultTours));
+    }
+  } else {
     localStorage.setItem(TOURS_KEY, JSON.stringify(defaultTours));
   }
+  
   if (!localStorage.getItem(VISA_COUNTRIES_KEY)) {
     localStorage.setItem(VISA_COUNTRIES_KEY, JSON.stringify(defaultVisaCountries));
   }

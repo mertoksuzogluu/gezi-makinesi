@@ -8,31 +8,21 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getAllVisaCountries } from '@/lib/admin-data';
 import { VisaCountry } from '@/types';
-import { ArrowRight, Loader2, Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { ArrowRight, Loader2 } from 'lucide-react';
 
 export default function VisaCountriesPage() {
   const [visaCountries, setVisaCountries] = useState<VisaCountry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     setVisaCountries(getAllVisaCountries());
     setIsLoading(false);
   }, []);
 
-  const filterCountries = (countries: VisaCountry[]) => {
-    if (!searchQuery.trim()) return countries;
-    return countries.filter(country =>
-      country.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  };
-
-  const schengenCountries = filterCountries(visaCountries.filter(c => c.category === 'Schengen'));
-  const usaCountries = filterCountries(visaCountries.filter(c => c.category === 'USA'));
-  const ukCountries = filterCountries(visaCountries.filter(c => c.category === 'UK'));
-  const uaeCountries = filterCountries(visaCountries.filter(c => c.category === 'UAE'));
-  const allFilteredCountries = filterCountries(visaCountries);
+  const schengenCountries = visaCountries.filter(c => c.category === 'Schengen');
+  const usaCountries = visaCountries.filter(c => c.category === 'USA');
+  const ukCountries = visaCountries.filter(c => c.category === 'UK');
+  const uaeCountries = visaCountries.filter(c => c.category === 'UAE');
 
   if (isLoading) {
     return (
@@ -45,12 +35,12 @@ export default function VisaCountriesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-12">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Vize Ülkeleri</h1>
           <p className="text-lg opacity-90 max-w-2xl">
             Vize danışmanlığı hizmeti verdiğimiz tüm ülkeleri inceleyin. 
-            Her ülke için gerekli evraklar ve süreç bilgilerine ulaşın.
+            Her ülke için gerekli evraklar, süreç ve ücret bilgilerine ulaşın.
           </p>
         </div>
       </section>
@@ -58,32 +48,18 @@ export default function VisaCountriesPage() {
       {/* Countries List */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          {/* Search Bar */}
-          <div className="max-w-md mb-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Ülke ara..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-12 text-base"
-              />
-            </div>
-          </div>
-
           <Tabs defaultValue="schengen" className="w-full">
             <TabsList className="w-full justify-start mb-8 flex-wrap h-auto gap-2">
               <TabsTrigger value="schengen" className="data-[state=active]:bg-blue-500 data-[state=active]:text-white">
                 Schengen ({schengenCountries.length})
               </TabsTrigger>
-              <TabsTrigger value="usa" className="data-[state=active]:bg-red-500 data-[state=active]:text-white">
+              <TabsTrigger value="usa" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
                 ABD ({usaCountries.length})
               </TabsTrigger>
-              <TabsTrigger value="uk" className="data-[state=active]:bg-purple-500 data-[state=active]:text-white">
+              <TabsTrigger value="uk" className="data-[state=active]:bg-blue-400 data-[state=active]:text-white">
                 İngiltere ({ukCountries.length})
               </TabsTrigger>
-              <TabsTrigger value="uae" className="data-[state=active]:bg-amber-500 data-[state=active]:text-white">
+              <TabsTrigger value="uae" className="data-[state=active]:bg-sky-500 data-[state=active]:text-white">
                 Dubai/BAE ({uaeCountries.length})
               </TabsTrigger>
               <TabsTrigger value="all">
@@ -96,20 +72,11 @@ export default function VisaCountriesPage() {
                 title="Schengen Ülkeleri" 
                 subtitle="Schengen vizesi ile 27 Avrupa ülkesine seyahat edebilirsiniz"
               />
-              {schengenCountries.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {schengenCountries.map((country) => (
-                    <CountryCard key={country.code} country={country} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">Aradığınız kriterlere uygun ülke bulunamadı.</p>
-                  <Button variant="outline" onClick={() => setSearchQuery('')}>
-                    Aramayı Temizle
-                  </Button>
-                </div>
-              )}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {schengenCountries.map((country) => (
+                  <CountryCard key={country.code} country={country} />
+                ))}
+              </div>
             </TabsContent>
 
             <TabsContent value="usa">
@@ -117,20 +84,11 @@ export default function VisaCountriesPage() {
                 title="Amerika Birleşik Devletleri" 
                 subtitle="ABD vizesi (B1/B2) başvuru danışmanlığı"
               />
-              {usaCountries.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {usaCountries.map((country) => (
-                    <CountryCard key={country.code} country={country} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">Aradığınız kriterlere uygun ülke bulunamadı.</p>
-                  <Button variant="outline" onClick={() => setSearchQuery('')}>
-                    Aramayı Temizle
-                  </Button>
-                </div>
-              )}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {usaCountries.map((country) => (
+                  <CountryCard key={country.code} country={country} />
+                ))}
+              </div>
             </TabsContent>
 
             <TabsContent value="uk">
@@ -138,20 +96,11 @@ export default function VisaCountriesPage() {
                 title="İngiltere" 
                 subtitle="Birleşik Krallık vizesi başvuru danışmanlığı"
               />
-              {ukCountries.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {ukCountries.map((country) => (
-                    <CountryCard key={country.code} country={country} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">Aradığınız kriterlere uygun ülke bulunamadı.</p>
-                  <Button variant="outline" onClick={() => setSearchQuery('')}>
-                    Aramayı Temizle
-                  </Button>
-                </div>
-              )}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {ukCountries.map((country) => (
+                  <CountryCard key={country.code} country={country} />
+                ))}
+              </div>
             </TabsContent>
 
             <TabsContent value="uae">
@@ -159,41 +108,23 @@ export default function VisaCountriesPage() {
                 title="Dubai / Birleşik Arap Emirlikleri" 
                 subtitle="Dubai e-vize başvuru danışmanlığı"
               />
-              {uaeCountries.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {uaeCountries.map((country) => (
-                    <CountryCard key={country.code} country={country} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">Aradığınız kriterlere uygun ülke bulunamadı.</p>
-                  <Button variant="outline" onClick={() => setSearchQuery('')}>
-                    Aramayı Temizle
-                  </Button>
-                </div>
-              )}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {uaeCountries.map((country) => (
+                  <CountryCard key={country.code} country={country} />
+                ))}
+              </div>
             </TabsContent>
 
             <TabsContent value="all">
               <SectionTitle 
                 title="Tüm Ülkeler" 
-                subtitle={`Toplam ${visaCountries.length} ülke${searchQuery ? ` (${allFilteredCountries.length} sonuç)` : ''}`}
+                subtitle={`Toplam ${visaCountries.length} ülke`}
               />
-              {allFilteredCountries.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {allFilteredCountries.map((country) => (
-                    <CountryCard key={country.code} country={country} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">Aradığınız kriterlere uygun ülke bulunamadı.</p>
-                  <Button variant="outline" onClick={() => setSearchQuery('')}>
-                    Aramayı Temizle
-                  </Button>
-                </div>
-              )}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {visaCountries.map((country) => (
+                  <CountryCard key={country.code} country={country} />
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
         </div>

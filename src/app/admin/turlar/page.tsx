@@ -90,7 +90,7 @@ function TourListContent() {
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="font-semibold truncate">{tour.title}</h3>
                       {tour.isPopular && (
-                        <Badge className="bg-amber-500">Popüler</Badge>
+                        <Badge className="bg-primary">Popüler</Badge>
                       )}
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">

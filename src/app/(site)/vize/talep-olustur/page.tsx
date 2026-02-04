@@ -108,7 +108,7 @@ function VisaRequestFormContent() {
       <div className="min-h-[60vh] flex items-center justify-center">
         <Card className="max-w-md w-full mx-4">
           <CardContent className="pt-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold mb-2">Talebiniz Alındı!</h2>
@@ -144,7 +144,7 @@ function VisaRequestFormContent() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-12">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">

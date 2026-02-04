@@ -41,9 +41,9 @@ export default function VisaCountryPage() {
 
   const categoryColors: Record<string, string> = {
     Schengen: 'bg-blue-500',
-    USA: 'bg-red-500',
-    UK: 'bg-purple-500',
-    UAE: 'bg-amber-500',
+    USA: 'bg-blue-600',
+    UK: 'bg-blue-400',
+    UAE: 'bg-sky-500',
   };
 
   if (isLoading) {
@@ -61,7 +61,7 @@ export default function VisaCountryPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-12">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-5xl">{country.flagEmoji}</span>
@@ -180,7 +180,7 @@ export default function VisaCountryPage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-green-600" />
-                      Detaylı evrak rehberliği
+                      Detaylı evrak danışmanlığı
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-green-600" />

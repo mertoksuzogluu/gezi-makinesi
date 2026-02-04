@@ -10,7 +10,7 @@ export function SectionTitle({ title, subtitle, centered = false, className = ''
     <div className={`mb-8 ${centered ? 'text-center' : ''} ${className}`}>
       <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
       {subtitle && (
-        <p className="mt-2 text-muted-foreground max-w-2xl">
+        <p className={`mt-2 text-muted-foreground ${centered ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
           {subtitle}
         </p>
       )}

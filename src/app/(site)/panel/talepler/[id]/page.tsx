@@ -33,7 +33,7 @@ import {
 const statusConfig: Record<string, { color: string; icon: typeof Clock }> = {
   'Alındı': { color: 'bg-blue-500', icon: Clock },
   'İncelemede': { color: 'bg-yellow-500', icon: FileText },
-  'Eksik Evrak': { color: 'bg-orange-500', icon: AlertCircle },
+  'Eksik Evrak': { color: 'bg-yellow-500', icon: AlertCircle },
   'Tamamlandı': { color: 'bg-green-500', icon: CheckCircle2 },
 };
 
@@ -100,7 +100,7 @@ export default function RequestDetailPage() {
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div className="flex items-center gap-4">
             <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${
-              isTour ? 'bg-blue-100' : 'bg-purple-100'
+              isTour ? 'bg-blue-100' : 'bg-blue-50'
             }`}>
               {isTour ? (
                 <Plane className="h-7 w-7 text-blue-600" />

@@ -38,7 +38,7 @@ const whyUsFeatures = [
 ];
 
 const testimonials = [
-  { name: 'Mehmet Öz', location: 'İstanbul', content: 'Paris turumuz muhteşemdi. Her şey kusursuz organize edilmişti. Rehberimiz çok bilgiliydi ve tüm sorularımıza sabırla yanıt verdi.', rating: 5, tourType: 'Paris Turu' },
+  { name: 'Mehmet Öz', location: 'İstanbul', content: 'Paris turumuz muhteşemdi. Her şey kusursuz organize edilmişti. Danışmanlarımız çok bilgiliydi ve tüm sorularımıza sabırla yanıt verdi.', rating: 5, tourType: 'Paris Turu' },
   { name: 'Ayşe Demir', location: 'Ankara', content: 'Schengen vizemi çok hızlı bir şekilde aldım. Tüm süreç boyunca bilgilendirildim. Kesinlikle tavsiye ediyorum!', rating: 5, tourType: 'Vize Danışmanlığı' },
   { name: 'Ali Yıldız', location: 'İzmir', content: 'Kendi turumuzu oluşturduk ve beklentilerimizin çok üzerinde bir deneyim yaşadık. Çok teşekkürler!', rating: 5, tourType: 'Özel Tur' },
 ];
@@ -110,7 +110,7 @@ export default function HomePage() {
                   <h2 className="text-2xl font-bold mb-2">Turlar</h2>
                   <p className="text-muted-foreground mb-4">
                     Avrupa&apos;dan Dubai&apos;ye, hazır turlar veya size özel organizasyonlar. 
-                    Profesyonel rehberlik ile unutulmaz deneyimler.
+                    Tur danışmanlığı hizmetimizle unutulmaz deneyimler.
                   </p>
                   <div className="flex items-center text-primary font-medium">
                     Turları Keşfet
@@ -185,7 +185,7 @@ export default function HomePage() {
               istediğiniz destinasyona özel tur planı oluşturalım.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {['Esnek Tarih', 'İstediğiniz Otel', 'Özel Rehber', 'Grup İndirimi'].map((item) => (
+              {['Esnek Tarih', 'İstediğiniz Otel', 'Tur Danışmanlığı', 'Grup İndirimi'].map((item) => (
                 <div key={item} className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
                   <CheckCircle2 className="h-4 w-4" />
                   {item}

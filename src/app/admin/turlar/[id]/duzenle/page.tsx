@@ -246,13 +246,19 @@ function EditTourContent() {
                 </div>
                 <div className="space-y-2">
                   <Label>Fiyat (EUR) *</Label>
-                  <Input
-                    type="number"
-                    min="0"
-                    value={formData.priceFrom}
-                    onChange={(e) => setFormData(prev => ({ ...prev, priceFrom: parseInt(e.target.value) }))}
-                    required
-                  />
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">€</span>
+                    <Input
+                      type="number"
+                      min="0"
+                      step="1"
+                      value={formData.priceFrom}
+                      onChange={(e) => setFormData(prev => ({ ...prev, priceFrom: parseInt(e.target.value) || 0 }))}
+                      className="pl-8 font-semibold text-lg"
+                      required
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground">Kişi başı başlangıç fiyatı</p>
                 </div>
               </div>
 
@@ -314,7 +320,7 @@ function EditTourContent() {
           {/* Dahil Olanlar */}
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>Fiyata Dahil</CardTitle>
+              <CardTitle>Sunulan Hizmetler</CardTitle>
               <Button type="button" variant="outline" size="sm" onClick={() => handleArrayAdd('included')}>
                 <Plus className="h-4 w-4 mr-1" /> Ekle
               </Button>
@@ -337,7 +343,7 @@ function EditTourContent() {
           {/* Dahil Olmayanlar */}
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>Fiyata Dahil Değil</CardTitle>
+              <CardTitle>Opsiyonel / Ekstra</CardTitle>
               <Button type="button" variant="outline" size="sm" onClick={() => handleArrayAdd('notIncluded')}>
                 <Plus className="h-4 w-4 mr-1" /> Ekle
               </Button>

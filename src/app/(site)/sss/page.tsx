@@ -38,7 +38,7 @@ const generalFaqs = [
 const tourFaqs = [
   {
     question: 'Turlarınız neleri kapsamaktadır?',
-    answer: 'Turlarımız genellikle uçak bileti, otel konaklaması, transferler, rehberlik hizmeti ve belirtilen aktiviteleri kapsamaktadır. Her turun detay sayfasında "Dahil" ve "Dahil Değil" bölümlerini inceleyebilirsiniz.'
+    answer: 'Turlarımız genellikle uçak bileti, otel konaklaması, transferler ve belirtilen aktiviteleri kapsamaktadır. Tur danışmanlığı hizmetimizle size en uygun programı hazırlıyoruz. Her turun detay sayfasında "Dahil" ve "Dahil Değil" bölümlerini inceleyebilirsiniz.'
   },
   {
     question: 'Grup turu düzenleyebilir misiniz?',
@@ -85,7 +85,7 @@ export default function FaqPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-16">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Sıkça Sorulan Sorular</h1>

@@ -57,13 +57,22 @@ export default function TourDetailPage() {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="relative h-[400px] md:h-[500px]">
-        <Image
-          src={tour.heroImage}
-          alt={tour.title}
-          fill
-          className="object-cover"
-          priority
-        />
+        {tour.heroImage.startsWith('/') ? (
+          <img
+            src={tour.heroImage}
+            alt={tour.title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <Image
+            src={tour.heroImage}
+            alt={tour.title}
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
           <div className="container mx-auto">
@@ -78,13 +87,13 @@ export default function TourDetailPage() {
                 {tour.durationDays} Gün
               </Badge>
               {tour.startDate && tour.endDate && (
-                <Badge variant="secondary" className="text-sm bg-green-600 text-white">
+                <Badge variant="secondary" className="text-sm bg-blue-500 text-white">
                   <CalendarDays className="h-4 w-4 mr-1" />
                   {formatDate(tour.startDate)} - {formatDate(tour.endDate)}
                 </Badge>
               )}
               {tour.isPopular && (
-                <Badge className="bg-amber-500">Popüler</Badge>
+                <Badge className="bg-primary">Popüler</Badge>
               )}
             </div>
           </div>
@@ -98,15 +107,21 @@ export default function TourDetailPage() {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-4">Tur Hakkında</h2>
-                <p className="text-muted-foreground">{tour.description}</p>
+                <h2 className="text-2xl font-bold mb-4">Seyahat Önerisi Hakkında</h2>
+                <p className="text-muted-foreground mb-4">{tour.description}</p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Not:</strong> Bu bir seyahat önerisidir. Program esnek olup, istediğiniz gibi özelleştirilebilir. 
+                    Herkes serbest takılabilir, rehberli bir tur değildir.
+                  </p>
+                </div>
               </div>
 
               <Tabs defaultValue="highlights" className="w-full">
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="highlights">Öne Çıkanlar</TabsTrigger>
-                  <TabsTrigger value="itinerary">Program</TabsTrigger>
-                  <TabsTrigger value="included">Dahil/Hariç</TabsTrigger>
+                  <TabsTrigger value="itinerary">Önerilen Program</TabsTrigger>
+                  <TabsTrigger value="included">Hizmet Önerileri</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="highlights" className="mt-6">
@@ -121,6 +136,11 @@ export default function TourDetailPage() {
                 </TabsContent>
                 
                 <TabsContent value="itinerary" className="mt-6">
+                  <div className="mb-4 p-3 bg-slate-50 rounded-lg">
+                    <p className="text-sm text-muted-foreground">
+                      Aşağıdaki program bir öneridir. İstediğiniz gibi değiştirebilir, eklemeler veya çıkarmalar yapabilirsiniz.
+                    </p>
+                  </div>
                   <div className="space-y-6">
                     {tour.itinerary.map((day) => (
                       <div key={day.day} className="flex gap-4">
@@ -137,11 +157,16 @@ export default function TourDetailPage() {
                 </TabsContent>
                 
                 <TabsContent value="included" className="mt-6">
+                  <div className="mb-4 p-3 bg-slate-50 rounded-lg">
+                    <p className="text-sm text-muted-foreground">
+                      Aşağıdaki hizmetler önerilir. İstediğiniz hizmetleri seçebilir, programı kendinize göre özelleştirebilirsiniz.
+                    </p>
+                  </div>
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-semibold mb-4 flex items-center gap-2">
                         <Check className="h-5 w-5 text-green-600" />
-                        Fiyata Dahil
+                        Sunulan Hizmetler
                       </h4>
                       <ul className="space-y-2">
                         {tour.included.map((item, index) => (
@@ -155,7 +180,7 @@ export default function TourDetailPage() {
                     <div>
                       <h4 className="font-semibold mb-4 flex items-center gap-2">
                         <X className="h-5 w-5 text-red-500" />
-                        Fiyata Dahil Değil
+                        Opsiyonel / Ekstra
                       </h4>
                       <ul className="space-y-2">
                         {tour.notIncluded.map((item, index) => (
@@ -175,11 +200,11 @@ export default function TourDetailPage() {
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Fiyat Bilgisi</CardTitle>
+                  <CardTitle>Tahmini Fiyat</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="mb-4">
-                    <span className="text-sm text-muted-foreground">Başlayan fiyatlarla</span>
+                    <span className="text-sm text-muted-foreground">Başlangıç fiyatı (tahmini)</span>
                     <p className="text-4xl font-bold text-primary">€{tour.priceFrom}</p>
                     <span className="text-sm text-muted-foreground">kişi başı</span>
                   </div>
@@ -202,8 +227,8 @@ export default function TourDetailPage() {
                     </div>
                   </div>
                   <Button className="w-full" size="lg" asChild>
-                    <Link href="/turlar/kendi-turunu-olustur">
-                      Bu Turu Talep Et
+                    <Link href={`/turlar/kendi-turunu-olustur?destination=${encodeURIComponent(`${tour.location}, ${tour.country}`)}&tourId=${tour.id}`}>
+                      Bu Öneriyi Talep Et
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

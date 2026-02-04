@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 const footerLinks = {
@@ -40,12 +39,10 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.png"
+              <img
+                src="/logo-white.svg"
                 alt="Vizelyio"
-                width={180}
-                height={40}
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-sm mb-4 text-slate-300 max-w-md">

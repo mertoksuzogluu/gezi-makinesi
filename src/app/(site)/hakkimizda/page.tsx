@@ -34,7 +34,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-16">
+      <section className="bg-gradient-to-r from-sky-500 to-blue-500 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Hakkımızda</h1>
@@ -125,7 +125,7 @@ export default function AboutPage() {
                     'Hazır tur paketleri',
                     'Özel grup turları',
                     'Kendi turunu oluştur hizmeti',
-                    'Profesyonel rehberlik',
+                    'Tur danışmanlığı',
                     'Otel ve uçak rezervasyonları'
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
@@ -160,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary text-white">
+      <section className="py-16 bg-gradient-to-r from-sky-500 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Seyahatinizi Planlayalım</h2>
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">

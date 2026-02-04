@@ -68,7 +68,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-16">
         <Card className="max-w-md mx-auto">
           <CardContent className="pt-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold mb-2">Teşekkürler!</h2>
@@ -87,7 +87,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-600 to-sky-500 text-white py-16">
+      <section className="bg-gradient-to-r from-sky-500 to-blue-500 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">İletişim</h1>

@@ -14,7 +14,7 @@ export const tours: Tour[] = [
     highlights: [
       'Eyfel Kulesi ziyareti ve panoramik manzara',
       'Seine Nehri\'nde akşam yemeği crusie\'u',
-      'Louvre Müzesi rehberli tur',
+      'Louvre Müzesi ziyareti',
       'Montmartre sokak turu',
       'Versailles Sarayı günübirlik gezi'
     ],
@@ -23,7 +23,6 @@ export const tours: Tour[] = [
       '3 gece 4 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
       'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti',
       'Müze giriş ücretleri'
     ],
     notIncluded: [
@@ -63,7 +62,6 @@ export const tours: Tour[] = [
       '4 gece 4 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
       'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti',
       'Müze ve ören yeri giriş ücretleri'
     ],
     notIncluded: [
@@ -73,7 +71,7 @@ export const tours: Tour[] = [
     ],
     itinerary: [
       { day: 1, title: 'İstanbul - Roma', description: 'Roma\'ya varış ve otele transfer. Akşam Roma sokaklarında yürüyüş.' },
-      { day: 2, title: 'Antik Roma', description: 'Kolezyum, Palatine Tepesi ve Roma Forumu rehberli tur.' },
+      { day: 2, title: 'Antik Roma', description: 'Kolezyum, Palatine Tepesi ve Roma Forumu ziyareti.' },
       { day: 3, title: 'Vatikan', description: 'Vatikan Müzeleri, Sistine Şapeli ve St. Peter Bazilikası ziyareti.' },
       { day: 4, title: 'Tivoli', description: 'Tivoli\'ye günübirlik gezi. Villa d\'Este ve Hadrian\'ın Villası.' },
       { day: 5, title: 'Roma - İstanbul', description: 'Serbest zaman ve İstanbul\'a dönüş.' }
@@ -93,7 +91,7 @@ export const tours: Tour[] = [
     heroImage: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop',
     highlights: [
       'Buckingham Sarayı nöbet değişimi',
-      'British Museum rehberli tur',
+      'British Museum ziyareti',
       'Thames Nehri cruise turu',
       'Tower of London ziyareti',
       'West End müzikal gösterisi'
@@ -102,8 +100,7 @@ export const tours: Tour[] = [
       'Gidiş-dönüş uçak bileti',
       '4 gece 4 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
-      'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti'
+      'Havalimanı transferleri'
     ],
     notIncluded: [
       'Vize ücreti',
@@ -132,7 +129,7 @@ export const tours: Tour[] = [
     priceFrom: 1199,
     heroImage: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&h=600&fit=crop',
     highlights: [
-      'Sagrada Familia rehberli tur',
+      'Sagrada Familia ziyareti',
       'Park Güell ziyareti',
       'La Rambla ve Gotik Mahalle yürüyüşü',
       'Tapas workshop deneyimi',
@@ -142,8 +139,7 @@ export const tours: Tour[] = [
       'Gidiş-dönüş uçak bileti',
       '3 gece 4 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
-      'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti'
+      'Havalimanı transferleri'
     ],
     notIncluded: [
       'Vize ücreti',
@@ -181,7 +177,6 @@ export const tours: Tour[] = [
       '4 gece 5 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
       'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti',
       'Çöl safarisi dahil'
     ],
     notIncluded: [
@@ -220,8 +215,7 @@ export const tours: Tour[] = [
       'Gidiş-dönüş uçak bileti',
       '3 gece 4 yıldızlı otelde konaklama',
       'Günlük kahvaltı',
-      'Havalimanı transferleri',
-      'Türkçe rehberlik hizmeti'
+      'Havalimanı transferleri'
     ],
     notIncluded: [
       'Vize ücreti',
@@ -236,6 +230,128 @@ export const tours: Tour[] = [
     ],
     gallery: ['https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&h=600&fit=crop'],
     isPopular: false
+  },
+  {
+    id: '7',
+    slug: 'bansko-kayak-turu',
+    title: 'Bansko Kayak Turu',
+    description: 'Bulgaristan\'ın en popüler kayak merkezi Bansko\'da karlı pistlerde unutulmaz bir kayak deneyimi. Hem başlangıç hem de ileri seviye kayakçılar için ideal.',
+    durationDays: 4,
+    location: 'Bansko',
+    country: 'Bulgaristan',
+    priceFrom: 499,
+    heroImage: '/bansko-ski.jpg',
+    highlights: [
+      'Bansko kayak merkezi günlük kayak pası',
+      'Pirin Dağları manzarası',
+      'Kayak ekipmanı kiralama desteği',
+      'Geleneksel Bulgar mutfağı deneyimi',
+      'Bansko şehir merkezi keşfi'
+    ],
+    included: [
+      'Gidiş-dönüş uçak bileti',
+      '3 gece otelde konaklama',
+      'Günlük kahvaltı',
+      'Havalimanı transferleri',
+      'Kayak merkezi transferleri'
+    ],
+    notIncluded: [
+      'Kayak pası',
+      'Kayak ekipmanı kiralama',
+      'Kayak dersi (opsiyonel)',
+      'Seyahat sigortası',
+      'Kişisel harcamalar'
+    ],
+    itinerary: [
+      { day: 1, title: 'İstanbul - Bansko', description: 'Sofia\'ya varış ve Bansko\'ya transfer. Otele yerleşme ve akşam serbest zaman.' },
+      { day: 2, title: 'Kayak Günü', description: 'Sabah kayak merkezine transfer. Tüm gün kayak yapma imkanı. Akşam otele dönüş.' },
+      { day: 3, title: 'Kayak ve Şehir Keşfi', description: 'Sabah kayak, öğleden sonra Bansko şehir merkezi keşfi ve geleneksel restoran ziyareti.' },
+      { day: 4, title: 'Bansko - İstanbul', description: 'Son kayak fırsatı. Öğleden sonra Sofia\'ya transfer ve İstanbul\'a dönüş.' }
+    ],
+    gallery: ['/bansko-ski.jpg'],
+    isPopular: true
+  },
+  {
+    id: '8',
+    slug: 'new-york-sehir-enerjisi',
+    title: 'New York Şehir Enerjisi',
+    description: 'Hiç durmayan şehir New York\'ta unutulmaz bir deneyim. Manhattan\'dan Brooklyn\'e, Broadway\'den Central Park\'a, şehrin tüm büyüsünü keşfedin.',
+    durationDays: 6,
+    location: 'New York',
+    country: 'ABD',
+    priceFrom: 2299,
+    heroImage: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&h=800&fit=crop',
+    highlights: [
+      'Empire State Building gözlem katı',
+      'Statue of Liberty ve Ellis Island turu',
+      'Central Park yürüyüşü ve gezisi',
+      'Times Square ve Broadway bölgesi',
+      'Brooklyn Bridge ve Manhattan skyline manzarası'
+    ],
+    included: [
+      'Gidiş-dönüş uçak bileti',
+      '5 gece 4 yıldızlı otelde konaklama',
+      'Günlük kahvaltı',
+      'Havalimanı transferleri',
+      'Metro kartı (7 günlük)'
+    ],
+    notIncluded: [
+      'Vize ücreti',
+      'Seyahat sigortası',
+      'Müze ve gözlem katı giriş ücretleri',
+      'Broadway gösteri bileti (opsiyonel)',
+      'Kişisel harcamalar'
+    ],
+    itinerary: [
+      { day: 1, title: 'İstanbul - New York', description: 'New York\'a varış (JFK veya Newark). Havalimanı transferi ve otele yerleşme. Akşam Times Square keşfi.' },
+      { day: 2, title: 'Manhattan Keşfi', description: 'Empire State Building, Flatiron Building, High Line Park. Öğleden sonra Central Park gezisi.' },
+      { day: 3, title: 'Statue of Liberty & Financial District', description: 'Statue of Liberty ve Ellis Island turu. Öğleden sonra Wall Street, 9/11 Memorial ziyareti.' },
+      { day: 4, title: 'Brooklyn & Williamsburg', description: 'Brooklyn Bridge yürüyüşü, DUMBO bölgesi, Williamsburg keşfi. Akşam Brooklyn Heights\'tan Manhattan manzarası.' },
+      { day: 5, title: 'Müzeler ve Alışveriş', description: 'Metropolitan Museum of Art veya MoMA ziyareti. Öğleden sonra Fifth Avenue alışveriş veya SoHo keşfi.' },
+      { day: 6, title: 'New York - İstanbul', description: 'Serbest zaman. Öğleden sonra havalimanına transfer ve İstanbul\'a dönüş.' }
+    ],
+    gallery: ['https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&h=800&fit=crop'],
+    isPopular: true
+  },
+  {
+    id: '9',
+    slug: 'prag-orta-avrupa-incisi',
+    title: 'Prag Orta Avrupa İncisi',
+    description: 'Altın şehir Prag\'da tarih, mimari ve kültürün buluştuğu büyülü bir yolculuk. Charles Bridge\'den Prague Castle\'a, her köşede bir hikaye.',
+    durationDays: 4,
+    location: 'Prag',
+    country: 'Çekya',
+    priceFrom: 1099,
+    heroImage: 'https://images.unsplash.com/photo-1541849546-216549ae216d?w=1200&h=800&fit=crop',
+    highlights: [
+      'Prague Castle kompleksi ziyareti',
+      'Charles Bridge ve Vltava Nehri manzarası',
+      'Old Town Square ve Astronomical Clock',
+      'Jewish Quarter (Josefov) keşfi',
+      'Geleneksel Çek mutfağı deneyimi'
+    ],
+    included: [
+      'Gidiş-dönüş uçak bileti',
+      '3 gece 4 yıldızlı otelde konaklama',
+      'Günlük kahvaltı',
+      'Havalimanı transferleri',
+      'Şehir içi ulaşım kartı'
+    ],
+    notIncluded: [
+      'Vize ücreti',
+      'Seyahat sigortası',
+      'Müze ve kale giriş ücretleri',
+      'Kişisel harcamalar',
+      'Öğle ve akşam yemekleri'
+    ],
+    itinerary: [
+      { day: 1, title: 'İstanbul - Prag', description: 'Prag\'a varış ve otele transfer. Akşam Old Town Square keşfi ve Astronomical Clock gösterisi.' },
+      { day: 2, title: 'Prague Castle ve Malá Strana', description: 'Prague Castle kompleksi, St. Vitus Cathedral ziyareti. Öğleden sonra Malá Strana (Lesser Town) keşfi.' },
+      { day: 3, title: 'Charles Bridge ve Jewish Quarter', description: 'Sabah Charles Bridge yürüyüşü. Öğleden sonra Jewish Quarter (Josefov), sinagoglar ve mezarlık ziyareti.' },
+      { day: 4, title: 'Prag - İstanbul', description: 'Serbest zaman ve alışveriş. Öğleden sonra havalimanına transfer ve İstanbul\'a dönüş.' }
+    ],
+    gallery: ['https://images.unsplash.com/photo-1541849546-216549ae216d?w=1200&h=800&fit=crop'],
+    isPopular: true
   }
 ];
 

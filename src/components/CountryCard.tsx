@@ -11,9 +11,9 @@ interface CountryCardProps {
 export function CountryCard({ country }: CountryCardProps) {
   const categoryColors: Record<string, string> = {
     Schengen: 'bg-blue-500',
-    USA: 'bg-red-500',
-    UK: 'bg-purple-500',
-    UAE: 'bg-amber-500',
+    USA: 'bg-blue-600',
+    UK: 'bg-blue-400',
+    UAE: 'bg-sky-500',
   };
 
   return (

@@ -25,7 +25,7 @@ export function TestimonialCard({ name, location, content, rating, tourType }: T
             <Star
               key={i}
               className={`h-4 w-4 ${
-                i < rating ? 'fill-amber-400 text-amber-400' : 'text-gray-300'
+                i < rating ? 'fill-blue-400 text-blue-400' : 'text-gray-300'
               }`}
             />
           ))}
