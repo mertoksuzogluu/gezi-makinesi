@@ -124,9 +124,35 @@ function RequestDetailContent() {
       setStatusNote('');
       setAppointmentDate('');
 
+      // Email gönder
+      try {
+        const emailResponse = await fetch('/api/send-status-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: request.payload.email,
+            fullName: request.payload.fullName,
+            requestId: request.id,
+            status: newStatus,
+            note: finalNote || undefined,
+            requestType: request.type,
+          }),
+        });
+
+        if (!emailResponse.ok) {
+          console.error('Email gönderilemedi:', await emailResponse.text());
+          // Email hatası durumunda da devam et, sadece logla
+        }
+      } catch (emailError) {
+        console.error('Email gönderme hatası:', emailError);
+        // Email hatası durumunda da devam et
+      }
+
       toast({
         title: 'Durum Güncellendi',
-        description: `Talep durumu "${newStatus}" olarak güncellendi.`,
+        description: `Talep durumu "${newStatus}" olarak güncellendi. Müşteriye email gönderildi.`,
       });
     } catch {
       toast({

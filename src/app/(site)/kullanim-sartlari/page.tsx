@@ -22,14 +22,14 @@ export default function TermsPage() {
 
         <h2>2. Hizmet Tanımı</h2>
         <p>
-          Vizelyio, tur organizasyonu ve vize danışmanlığı hizmetleri sunan bir seyahat acentesidir. 
+          Vizelyio, tur danışmanlığı ve vize danışmanlığı hizmetleri sunan bir danışmanlık firmasıdır. 
           Sunulan hizmetler:
         </p>
         <ul>
-          <li>Hazır tur paketleri</li>
-          <li>Özel grup tur organizasyonları</li>
+          <li>Seyahat önerileri ve tur danışmanlığı</li>
+          <li>Özel grup tur danışmanlığı</li>
           <li>Vize danışmanlığı hizmetleri</li>
-          <li>Otel ve uçak rezervasyonları</li>
+          <li>Seyahat planlama desteği</li>
         </ul>
 
         <h2>3. Rezervasyon ve Ödeme</h2>

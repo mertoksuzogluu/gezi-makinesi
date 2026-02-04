@@ -208,7 +208,7 @@ export default function PanelPage() {
               <div className="flex-1">
                 <h3 className="font-semibold mb-1">Yeni Tur Talebi</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Özel tur organizasyonu için talep oluşturun.
+                  Özel tur danışmanlığı için talep oluşturun.
                 </p>
                 <Button size="sm" asChild>
                   <Link href="/turlar/kendi-turunu-olustur">

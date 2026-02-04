@@ -46,8 +46,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm mb-4 text-slate-300 max-w-md">
-              Vizelyio ile hayalinizdeki tatili planlayın. Turlar, vize danışmanlığı ve 
-              özel tur organizasyonları ile seyahatlerinizi kolaylaştırıyoruz.
+              Vizelyio ile hayalinizdeki tatili planlayın. Tur danışmanlığı, vize danışmanlığı ve 
+              seyahat planlama desteği ile seyahatlerinizi kolaylaştırıyoruz.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
@@ -137,7 +137,6 @@ export function Footer() {
             © {new Date().getFullYear()} Vizelyio. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs text-slate-300">TÜRSAB Belge No: XXXXX</span>
           </div>
         </div>
       </div>

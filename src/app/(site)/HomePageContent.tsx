@@ -32,7 +32,7 @@ const processSteps = [
 ];
 
 const whyUsFeatures = [
-  { icon: ShieldCheck, title: 'Güvenilir Hizmet', description: 'TÜRSAB belgeli, 10+ yıl deneyim' },
+  { icon: ShieldCheck, title: 'Güvenilir Hizmet', description: '10+ yıl deneyim, güvenilir danışmanlık' },
   { icon: Users, title: 'Uzman Kadro', description: 'Alanında uzman danışmanlar' },
   { icon: Clock, title: 'Hızlı Süreç', description: 'Minimum bekleme, maksimum verimlilik' },
   { icon: HeadphonesIcon, title: '7/24 Destek', description: 'Her zaman yanınızdayız' },
@@ -105,15 +105,15 @@ export function HomePageContent() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6">
               <Link href="/turlar">
-                <Card className="group cursor-pointer transition-all hover:shadow-xl hover:border-primary">
-                  <CardContent className="p-8">
+                <Card className="group cursor-pointer transition-all hover:shadow-xl hover:border-primary h-full">
+                  <CardContent className="p-8 flex flex-col h-full">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       <Plane className="h-7 w-7 text-primary" />
                     </div>
                     <h2 className="text-2xl font-bold mb-2">Turlar</h2>
-                    <p className="text-muted-foreground mb-4">
-                      Avrupa&apos;dan Dubai&apos;ye, hazır turlar veya size özel organizasyonlar. 
-                      Tur danışmanlığı hizmetimizle unutulmaz deneyimler.
+                    <p className="text-muted-foreground mb-4 flex-grow">
+                      Avrupa&apos;dan Dubai&apos;ye, seyahat önerileri ve tur danışmanlığı. 
+                      Size özel seyahat planlama desteği ile unutulmaz deneyimler.
                     </p>
                     <div className="flex items-center text-primary font-medium">
                       Turları Keşfet
@@ -124,15 +124,13 @@ export function HomePageContent() {
               </Link>
 
               <Link href="/vize">
-                <Card className="group cursor-pointer transition-all hover:shadow-xl hover:border-primary">
-                  <CardContent className="p-8">
+                <Card className="group cursor-pointer transition-all hover:shadow-xl hover:border-primary h-full">
+                  <CardContent className="p-8 flex flex-col h-full">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       <Stamp className="h-7 w-7 text-primary" />
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <h2 className="text-2xl font-bold">Vize Danışmanlığı</h2>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
+                    <h2 className="text-2xl font-bold mb-2">Vize Danışmanlığı</h2>
+                    <p className="text-muted-foreground mb-4 flex-grow">
                       Schengen, ABD, İngiltere, Dubai vizesi... 
                       Deneyimli ekibimizle vize sürecinizi kolaylaştırın.
                     </p>

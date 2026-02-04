@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const generalFaqs = [
   {
     question: 'Vizelyio nedir?',
-    answer: 'Vizelyio, tur organizasyonları ve vize danışmanlığı hizmetleri sunan bir seyahat acentesidir. 10 yılı aşkın deneyimimizle müşterilerimize kaliteli hizmet sunuyoruz.'
+    answer: 'Vizelyio, tur danışmanlığı ve vize danışmanlığı hizmetleri sunan bir danışmanlık firmasıdır. 10 yılı aşkın deneyimimizle müşterilerimize kaliteli danışmanlık hizmeti sunuyoruz.'
   },
   {
     question: 'Nasıl rezervasyon yapabilirim?',

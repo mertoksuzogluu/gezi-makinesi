@@ -39,7 +39,7 @@ const stats = [
 
 const values = [
   { icon: Users, title: 'Müşteri Odaklılık', description: 'Her müşterimiz bizim için özeldir. İhtiyaçlarınızı dinler, size en uygun çözümü sunarız.' },
-  { icon: Award, title: 'Kalite', description: 'Hizmetlerimizde kaliteden asla ödün vermeyiz. TÜRSAB belgeli, güvenilir bir acenteyiz.' },
+  { icon: Award, title: 'Kalite', description: 'Hizmetlerimizde kaliteden asla ödün vermeyiz. Güvenilir danışmanlık hizmeti sunuyoruz.' },
   { icon: Globe, title: 'Uzmanlık', description: 'Alanında uzman ekibimiz, vize ve tur konularında size en doğru yönlendirmeyi yapar.' },
   { icon: HeadphonesIcon, title: 'Destek', description: 'Seyahatinizin başından sonuna kadar yanınızdayız. 7/24 destek hattımız hizmetinizde.' },
 ];
@@ -87,8 +87,8 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Yıllar içinde edindiğimiz deneyim ve müşterilerimizden aldığımız geri bildirimlerle 
-                  sürekli kendimizi geliştirdik. Bugün, Türkiye&apos;nin önde gelen tur operatörlerinden 
-                  biri olarak hizmet veriyoruz.
+                  sürekli kendimizi geliştirdik. Bugün, seyahat danışmanlığı alanında güvenilir bir 
+                  hizmet sağlayıcısı olarak müşterilerimize hizmet veriyoruz.
                 </p>
                 <p>
                   2020 yılında vize danışmanlığı hizmetimizi başlattık. Böylece müşterilerimize 
@@ -136,11 +136,11 @@ export default function AboutPage() {
                 <h3 className="text-xl font-semibold mb-4">Vizelyio - Turlar</h3>
                 <ul className="space-y-3">
                   {[
-                    'Hazır tur paketleri',
-                    'Özel grup turları',
-                    'Kendi turunu oluştur hizmeti',
+                    'Seyahat önerileri',
                     'Tur danışmanlığı',
-                    'Otel ve uçak rezervasyonları'
+                    'Kendi turunu oluştur danışmanlığı',
+                    'Destinasyon önerileri',
+                    'Seyahat planlama desteği'
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -178,7 +178,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Seyahatinizi Planlayalım</h2>
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            İster tur organizasyonu, ister vize danışmanlığı olsun, uzman ekibimiz yanınızda.
+            İster tur danışmanlığı, ister vize danışmanlığı olsun, uzman ekibimiz yanınızda.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
@@ -186,12 +186,12 @@ export default function AboutPage() {
                 Turları Keşfet
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-              <Link href="/iletisim">
+            <Link href="/iletisim">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white bg-transparent">
                 Bize Ulaşın
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
